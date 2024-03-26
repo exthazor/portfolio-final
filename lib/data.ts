@@ -1,6 +1,5 @@
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
-import { FaReact } from "react-icons/fa";
 import { LuGraduationCap, LuFileJson } from "react-icons/lu";
 import wintImg from "@/public/wint.png";
 import cherrycityImg from "@/public/cherrycity.png";
@@ -35,8 +34,8 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "Graduated in BTech",
-    location: "Manipal Institute of Technology, India",
+    title: "Graduated in Bachelor of Technology",
+    location: "Manipal Institute of Technology, Manipal",
     description:
       "Completed my Bachelor of Technology degree with a focus on Information Technology and a minor in Big Data.",
     icon: React.createElement(LuGraduationCap),
@@ -44,7 +43,7 @@ export const experiencesData = [
   },
   {
     title: "Software Developer",
-    location: "Orlando, FL",
+    location: "Cerner Corporation, Bengaluru",
     description:
       "Contributed to developing and enhancing solutions that improved healthcare delivery and patient outcomes.",
     icon: React.createElement(CgWorkAlt),
@@ -52,7 +51,7 @@ export const experiencesData = [
   },
   {
     title: "Software Developer - Backend",
-    location: "Houston, TX",
+    location: "Wint Wealth, Bengaluru",
     description:
       "Developed a two-factor authentication system and referral programs at Wint Wealth, conducted VAPT, boosting platform security, user engagement, and high business growth.",
     icon: React.createElement(LuFileJson),
