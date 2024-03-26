@@ -4,6 +4,7 @@ import React from "react";
 import SectionHeading from "./section-heading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
+import { Player } from "@lottiefiles/react-lottie-player";
 
 export default function About() {
   const { ref } = useSectionInView("About");
@@ -17,9 +18,24 @@ export default function About() {
       transition={{ delay: 0.175 }}
       id="about"
     >
-      <SectionHeading>About me 🙋</SectionHeading>
-      <p className="mb-3">
+      <SectionHeading>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          About me
+          <Player
+            autoplay
+            loop
+            src="/lotties/baymax.json"
+            style={{
+              height: '60px',
+              width: '60px',
+              marginLeft: '10px',
+              marginTop: '-22px'
+            }}
+          />
+        </div>
+      </SectionHeading>
 
+      <p className="mb-3">
 
         After embarking on a journey through the fascinating world of {" "}
         <span className="font-medium">software development</span>, I've dedicated the past four years to coding, with a particular focus on {" "}

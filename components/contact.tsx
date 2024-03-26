@@ -7,6 +7,7 @@ import { useSectionInView } from "@/lib/hooks";
 import { sendEmail } from "@/actions/sendEmail";
 import SubmitBtn from "./submit-btn";
 import toast from "react-hot-toast";
+import { Player } from '@lottiefiles/react-lottie-player';
 
 export default function Contact() {
   const { ref } = useSectionInView("Contact");
@@ -29,15 +30,33 @@ export default function Contact() {
         once: true,
       }}
     >
-      <SectionHeading>Contact me</SectionHeading>
+      <SectionHeading>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          Contact me
+          <Player
+            autoplay
+            loop
+            src="https://lottie.host/deb81709-a925-44f3-80f7-ec8a146e889d/FIKZME0KzW.json"
+            style={{
+              height: '60px',
+              width: '60px',
+              marginLeft: '10px',
+              marginTop: '-35px'
+            }}
+          />
+        </div>
+      </SectionHeading>
+
+
 
       <p className="text-gray-700 -mt-6 dark:text-white/80">
-        Please contact me directly at{" "}
+        Please contact me through this form. You can also email me directly at{" "}
         <a className="underline" href="mailto:rhitamdutta1996@gmail.com">
           rhitamdutta1996@gmail.com
-        </a>{" "}
-        or through this form.
+        </a>.{" "}
       </p>
+
+      
 
       <form
         className="mt-10 flex flex-col dark:text-black"

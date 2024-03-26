@@ -12,7 +12,7 @@ import useSound from "use-sound";
 export default function Home() {
 
   useEffect(() => {
-    const audio = new Audio('/lofi.mp3');
+    const audio = new Audio('./herbal_tea.mp3');
     audio.loop = true;
     audio.play();
     return () => audio.pause();

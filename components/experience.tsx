@@ -10,6 +10,7 @@ import "react-vertical-timeline-component/style.min.css";
 import { experiencesData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import { useTheme } from "@/context/theme-context";
+import { Player } from "@lottiefiles/react-lottie-player";
 
 export default function Experience() {
   const { ref } = useSectionInView("Experience");
@@ -17,7 +18,22 @@ export default function Experience() {
 
   return (
     <section id="experience" ref={ref} className="scroll-mt-28 mb-28 sm:mb-40">
-      <SectionHeading>My experience</SectionHeading>
+      <SectionHeading>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          My experience
+          <Player
+            autoplay
+            loop
+            src="/lotties/screen.json"
+            style={{
+              height: '120px',
+              width: '120px',
+              marginLeft: '10px',
+              marginTop: '-4px'
+            }}
+          />
+        </div>
+      </SectionHeading>
       <VerticalTimeline lineColor="">
         {experiencesData.map((item, index) => (
           <React.Fragment key={index}>

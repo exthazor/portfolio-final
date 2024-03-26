@@ -5,6 +5,7 @@ import SectionHeading from "./section-heading";
 import { skillsData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import { motion } from "framer-motion";
+import { Player } from "@lottiefiles/react-lottie-player";
 
 const fadeInAnimationVariants = {
   initial: {
@@ -29,7 +30,22 @@ export default function Skills() {
       ref={ref}
       className="mb-28 max-w-[53rem] scroll-mt-28 text-center sm:mb-40"
     >
-      <SectionHeading>My skills</SectionHeading>
+     <SectionHeading>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          My skills
+          <Player
+            autoplay
+            loop
+            src="/lotties/wrench.json"
+            style={{
+              height: '120px',
+              width: '120px',
+              marginLeft: '10px',
+              marginTop: '-4px'
+            }}
+          />
+        </div>
+      </SectionHeading>
       <ul className="flex flex-wrap justify-center gap-2 text-lg text-gray-800">
         {skillsData.map((skill, index) => (
           <motion.li
