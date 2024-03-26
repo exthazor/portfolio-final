@@ -6,17 +6,33 @@ import Intro from "@/components/intro";
 import Projects from "@/components/projects";
 import SectionDivider from "@/components/section-divider";
 import Skills from "@/components/skills";
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import useSound from "use-sound";
 
 export default function Home() {
 
+  const [play, { stop }] = useSound('/herbal_tea.mp3', { loop: true });
+  
+  // State to manage if the music is actively playing
+  const [musicPlaying, setMusicPlaying] = useState(true);
+
   useEffect(() => {
-    const audio = new Audio('./herbal_tea.mp3');
-    audio.loop = true;
-    audio.play();
-    return () => audio.pause();
-  }, []);
+    play();
+    setMusicPlaying(true);
+    return () => {
+      stop();
+      setMusicPlaying(false)
+    }
+  }, [play, stop]);
+
+  const toggleMusic = () => {
+    if (musicPlaying) {
+      stop();
+    } else {
+      play();
+    }
+    setMusicPlaying(!musicPlaying);
+  };
 
   return (
     <main className="flex flex-col items-center px-4">
@@ -27,7 +43,21 @@ export default function Home() {
       <Skills />
       <Experience />
       <Contact />
-      
+      <button onClick={toggleMusic} className="fixed bottom-4 left-4 z-50" style={{ background: 'none', border: 'none' }}>
+        <img
+          src="/vinyl.png" // Ensure the correct path
+          alt="Toggle Music"
+          className={`vinyl ${musicPlaying ? 'playing' : ''}`}
+          style={{
+            width: '50px',
+            height: '50px',
+            border: '2px solid black', // Black border
+            boxShadow: '0 0 0 0.5px white', // Simulating white border outside the black one
+            borderRadius: '50%', // Making sure the border wraps around the circle nicely
+            transition: 'transform 0.5s ease-out',
+          }}
+        />
+      </button>
     </main>
   );
 }
