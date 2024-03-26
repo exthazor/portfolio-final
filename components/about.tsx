@@ -17,32 +17,28 @@ export default function About() {
       transition={{ delay: 0.175 }}
       id="about"
     >
-      <SectionHeading>About me</SectionHeading>
+      <SectionHeading>About me 🙋</SectionHeading>
       <p className="mb-3">
-        After graduating with a degree in{" "}
-        <span className="font-medium">Accounting</span>, I decided to pursue my
-        passion for programming. I enrolled in a coding bootcamp and learned{" "}
-        <span className="font-medium">full-stack web development</span>.{" "}
-        <span className="italic">My favorite part of programming</span> is the
-        problem-solving aspect. I <span className="underline">love</span> the
-        feeling of finally figuring out a solution to a problem. My core stack
+
+
+        After embarking on a journey through the fascinating world of {" "}
+        <span className="font-medium">software development</span>, I've dedicated the past four years to coding, with a particular focus on {" "}
+        <span className="font-medium">backend technologies and cloud infrastructure</span> ☁️. {" "}
+        <span className="italic">My academic background laid the foundation, but my true passion lies in</span> solving complex problems and creating efficient, scalable solutions. 
+       I find joy in cracking a problem that's had me stumped, like a light finally shining through the darkness. ☀️ 
+       </p>
+       <p className="mb-3">My core stack
         is{" "}
         <span className="font-medium">
-          React, Next.js, Node.js, and MongoDB
+          <span className="underline font-bold">Spring Boot</span>, <span className="underline font-bold">Node.js</span>, <span className="underline font-bold">AWS</span>, and <span className="underline font-bold">Relational Databases</span>.{" "}
         </span>
-        . I am also familiar with TypeScript and Prisma. I am always looking to
-        learn new technologies. I am currently looking for a{" "}
+        I am currently looking for a{" "}
         <span className="font-medium">full-time position</span> as a software
-        developer.
+        developer. 💻 
       </p>
-
       <p>
-        <span className="italic">When I'm not coding</span>, I enjoy playing
-        video games, watching movies, and playing with my dog. I also enjoy{" "}
-        <span className="font-medium">learning new things</span>. I am currently
-        learning about{" "}
-        <span className="font-medium">history and philosophy</span>. I'm also
-        learning how to play the guitar.
+        <span className="italic">Beyond the world of coding,</span> I balance my life with pursuits that keep me grounded and energized. 
+        As a <span className="font-bold">national level powerlifter 🏅</span>, I understand the value of dedication, discipline, and continuous improvement, principles that I apply to my professional life as well 🎯.{" "}
       </p>
     </motion.section>
   );

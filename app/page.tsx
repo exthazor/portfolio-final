@@ -1,3 +1,4 @@
+'use client';
 import About from "@/components/about";
 import Contact from "@/components/contact";
 import Experience from "@/components/experience";
@@ -5,8 +6,18 @@ import Intro from "@/components/intro";
 import Projects from "@/components/projects";
 import SectionDivider from "@/components/section-divider";
 import Skills from "@/components/skills";
+import { useEffect, useRef } from 'react';
+import useSound from "use-sound";
 
 export default function Home() {
+
+  useEffect(() => {
+    const audio = new Audio('/lofi.mp3');
+    audio.loop = true;
+    audio.play();
+    return () => audio.pause();
+  }, []);
+
   return (
     <main className="flex flex-col items-center px-4">
       <Intro />
@@ -16,6 +27,7 @@ export default function Home() {
       <Skills />
       <Experience />
       <Contact />
+      
     </main>
   );
 }
